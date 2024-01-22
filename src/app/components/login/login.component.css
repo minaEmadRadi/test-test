@@ -1,0 +1,41 @@
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input {
+  padding: 10px 10px;
+  border-radius: 8px;
+  offset: none;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: rgb(110, 26, 26);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: black;
+}
+
+small {
+  display: block;
+  color: red;
+}

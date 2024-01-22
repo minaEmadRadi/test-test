@@ -1,0 +1,28 @@
+<div class="container">
+  <form [formGroup]="loginForm">
+    <div class="input-group">
+      <label for="name">Name</label>
+      <input type="text" formControlName="name" id="name" />
+    </div>
+    <div class="input-group">
+      <label for="email">Email</label>
+      <input type="text" formControlName="email" id="email" />
+    </div>
+    <div class="input-group">
+      <label for="pass">Password</label>
+      <input type="password" formControlName="pass" id="pass" />
+    </div>
+    <button type="submit">Submit</button>
+    <div class="errors" *ngIf="!loginForm.untouched">
+      <small *ngIf="loginForm.get('name')?.errors?.['required']"
+        >name field is required</small
+      >
+      <small *ngIf="loginForm.get('email')?.errors?.['required']"
+        >email field is required</small
+      >
+      <small *ngIf="loginForm.get('pass')?.errors?.['required']"
+        >email field is required</small
+      >
+    </div>
+  </form>
+</div>
