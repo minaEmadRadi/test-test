@@ -1,28 +1,27 @@
-<div class="container">
-  <form [formGroup]="loginForm">
-    <div class="input-group">
-      <label for="name">Name</label>
-      <input type="text" formControlName="name" id="name" />
-    </div>
-    <div class="input-group">
+<div class="login-container">
+  <h2>Login</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
       <label for="email">Email</label>
-      <input type="text" formControlName="email" id="email" />
+      <input type="email" formControlName="email" id="email" class="form-control">
+      <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+        Invalid email address.
+      </div>
     </div>
-    <div class="input-group">
-      <label for="pass">Password</label>
-      <input type="password" formControlName="pass" id="pass" />
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" formControlName="password" id="password" class="form-control">
+      <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+        Password is required.
+      </div>
     </div>
-    <button type="submit">Submit</button>
-    <div class="errors" *ngIf="!loginForm.untouched">
-      <small *ngIf="loginForm.get('name')?.errors?.['required']"
-        >name field is required</small
-      >
-      <small *ngIf="loginForm.get('email')?.errors?.['required']"
-        >email field is required</small
-      >
-      <small *ngIf="loginForm.get('pass')?.errors?.['required']"
-        >email field is required</small
-      >
+
+    <div class="login-btn-container">
+      <!-- Other content... -->
+      <button [style.left.%]="buttonX" [style.top.%]="buttonY" (mousemove)="handleMouseMove($event)" (click)="onSubmit()" class="btn btn-primary">Login</button>
     </div>
-  </form>
+    
+      </form>
+  <a href="#">Forgot Password?</a><a href="#">Register</a>
 </div>

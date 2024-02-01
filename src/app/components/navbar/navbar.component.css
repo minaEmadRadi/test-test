@@ -1,0 +1,66 @@
+.navbar {
+    background-color: #333; /* Dark background */
+    color: white;
+    padding: 10px 20px; /* Spacing around content */
+    display: flex;
+    justify-content: space-between; /* Space out brand and nav items */
+    align-items: center; /* Vertically center items */
+  }
+  
+  .navbar-brand {
+    font-size: 1.5em; /* Larger font size for brand */
+    font-weight: bold;
+  }
+  
+.navbar-nav .right {
+    margin-left: auto; /* Push items to the right */
+}
+.navbar-nav {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+  
+  .navbar-nav {
+    display: flex;
+    justify-content: space-between; /* Align items to the start and end of the navbar */
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Align nav items in a row */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+  }
+  
+  .navbar-nav li {
+    margin-left: 20px; /* Spacing between nav items */
+  }
+  
+  .navbar-nav a {
+    color: white; /* White text color */
+    text-decoration: none; /* No underline */
+    font-size: 1em;
+  }
+  
+  .navbar-nav a:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  .CJF7A2{
+    position: relative;
+    width: 100%;
+    height: auto;
+
+  }
+  #SITE_HEADER {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    margin-left: 0;
+    width: 100%;
+    min-width: 0;
+   
+    z-index: 50;
+
+}
+div{
+    display: block;
+}
