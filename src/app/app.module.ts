@@ -12,7 +12,7 @@ import { UserComponent } from './components/user/user.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 @NgModule({
-  declarations: [AppComponent, AuthComponent, NavbarComponent, FooterComponent, HomePageComponent, UserComponent, UserProfileComponent],
+  declarations: [AppComponent, AuthComponent, NavbarComponent, FooterComponent, UserProfileComponent],
   imports: [BrowserModule, AppRoutingModule, WorkerModule],
   providers: [],
   bootstrap: [AppComponent],
