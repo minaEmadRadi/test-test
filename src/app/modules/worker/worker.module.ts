@@ -8,9 +8,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { HomePageComponent } from 'src/app/components/home-page/home-page.component';
 import { UserComponent } from 'src/app/components/user/user.component';
+import { CardModule } from 'primeng/card';
+import { UserProfileComponent } from 'src/app/components/user-profile/user-profile.component';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
-  declarations: [LoginComponent, HomePageComponent, UserComponent],
+  declarations: [
+    LoginComponent,
+    HomePageComponent,
+    UserComponent,
+    UserProfileComponent,
+  ],
   imports: [
     HttpClientModule,
     ButtonModule,
@@ -18,6 +27,9 @@ import { UserComponent } from 'src/app/components/user/user.component';
     WorkerRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    CardModule,
+    ToastModule,
   ],
+  providers: [MessageService],
 })
 export class WorkerModule {}

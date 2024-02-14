@@ -7,13 +7,16 @@ import { WorkerModule } from './modules/worker/worker.module';
 import { AuthComponent } from './components/auth/auth.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { HomePageComponent } from './components/home-page/home-page.component';
-import { UserComponent } from './components/user/user.component';
-import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [AppComponent, AuthComponent, NavbarComponent, FooterComponent, UserProfileComponent],
-  imports: [BrowserModule, AppRoutingModule, WorkerModule],
+  declarations: [AppComponent, AuthComponent, NavbarComponent, FooterComponent],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    WorkerModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
