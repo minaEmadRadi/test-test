@@ -36,12 +36,20 @@ export class UserProfileComponent {
   }
 
   attendance() {
-    if (true) {
-      // future condition
-      this.showSuccess('Data Submitted successfully');
-    } else {
-      this.showError('there is an error occurred');
-    }
+    this.userService.attend(this.userId!).subscribe({
+      next: (success) => {
+        if (success) {
+          this.showSuccess('Attendance marked successfully.');
+        } else {
+          this.showError('Failed to mark attendance.');
+        }
+      },
+      error: (error) => {
+        this.showError(`Failed to mark attendance.`);
+      }
+    });
+    
+    
   }
 
   showSuccess(message: string) {

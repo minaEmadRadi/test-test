@@ -24,4 +24,8 @@ export class UserService {
   getUserById(id: number): Observable<User> {
     return this.http.get<User>(`${this.apiUrl}/GetUserById/${id}`);
   }
+
+  attend(id:number):Observable<boolean>{
+    return this.http.post<boolean>(`http://10.0.0.15:9097/api/TimeIn/${id}`,{});
+  }
 }
