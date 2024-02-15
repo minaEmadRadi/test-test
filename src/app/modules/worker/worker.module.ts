@@ -13,6 +13,8 @@ import { UserProfileComponent } from 'src/app/components/user-profile/user-profi
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { TableModule } from 'primeng/table';
+import { UserCardProfileComponent } from '../../components/user-card-profile/user-card-profile.component';
+import { UserDataDisplayComponent } from '../../components/user-data-display/user-data-display.component';
 
 
 
@@ -22,6 +24,8 @@ import { TableModule } from 'primeng/table';
     HomePageComponent,
     UserComponent,
     UserProfileComponent,
+    UserCardProfileComponent,
+    UserDataDisplayComponent,
   ],
   imports: [
     HttpClientModule,
@@ -32,7 +36,7 @@ import { TableModule } from 'primeng/table';
     ReactiveFormsModule,
     CardModule,
     ToastModule,
-    TableModule
+    TableModule,
   ],
   providers: [MessageService],
 })

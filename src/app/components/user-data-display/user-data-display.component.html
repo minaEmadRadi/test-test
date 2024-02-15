@@ -1,0 +1,20 @@
+<div *ngIf="userData" class="user-data-summary">
+    <h2>User Data Summary</h2>
+    <p>Number Of Projects: {{ userData['Number Of Projects = '] }}</p>
+    <p>Number Of Attendances: {{ userData['Number Of Attendences ='] }}</p>
+  
+    <h3>Duration in Group By Month</h3>
+    <div class="duration-section" *ngFor="let duration of userData['Duaration in Group By Month =']">
+      <p>Month: {{ duration.month }}</p>
+      <p>Duration Per Hours: {{ duration.durationPerHours }}</p>
+      <p>Max Out: {{ duration.maxOut }}</p>
+      <p>Max Attendance Hours: {{ duration.maxAttenanceHours }}</p>
+      <p>First Time In Per Month: {{ duration.firstTimeInPerMonth }}</p>
+      <p>Last Time In Per Month: {{ duration.lastTimeInPerMonth }}</p>
+      <p>Number of Attendances Per Month: {{ duration.nofAttendencePerMonth }}</p>
+      <p>Number of Effective Days: {{ duration.numberOfEffectiveDays }}</p>
+      <p>Number of Absents Per Month: {{ duration.nofAbsentsPerMonth }}</p>
+      <hr>
+    </div>
+  </div>
+  

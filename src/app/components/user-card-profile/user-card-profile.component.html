@@ -1,0 +1,16 @@
+<p-card [header]="user.name" [subheader]="user.email" class="user-card">
+    <ng-template pTemplate="header">
+      <img alt="{{ user.name }}'s profile image" src="https://primefaces.org/primeng/assets/showcase/images/demo/galleria/galleria1.jpg" />
+    </ng-template>
+    <div class="user-details">
+      <p>ID: {{ user.id }}</p>
+      <p>Name: {{ user.name }}</p>
+      <p>Email: {{ user.email }}</p>
+      <!-- Include more user details as needed -->
+    </div>
+    <ng-template pTemplate="footer">
+      <p-button label="Leave" icon="pi pi-sign-out" styleClass="p-button-danger" (onClick)="leave()"></p-button>
+      <p-button label="Attend" icon="pi pi-check" styleClass="p-button-success"  [style]="{marginLeft: '10px'}" (onClick)="attend()"></p-button>
+    </ng-template>
+  </p-card>
+  

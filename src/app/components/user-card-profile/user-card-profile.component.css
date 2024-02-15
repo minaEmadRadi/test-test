@@ -1,0 +1,33 @@
+.user-card {
+    max-width: 360px;
+    margin: auto;
+  }
+  
+  .user-details p {
+    margin: 5px 0;
+  }
+  .user-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Adds a subtle shadow around the card */
+    transition: 0.3s; /* Smooth transition for hover effects */
+    border-radius: 10px; /* Rounds the corners of the card */
+    margin: 20px; /* Adds margin around the card */
+  }
+  
+  .user-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); /* Enhances the shadow on hover for a "lifting" effect */
+  }
+  
+  .user-card img {
+    border-radius: 10px 10px 0 0; /* Rounds the top corners of the image */
+    width: 100%; /* Ensures the image covers the card width */
+    height: auto; /* Keeps the image aspect ratio */
+  }
+  
+  .user-details {
+    padding: 2px 16px; /* Adds padding inside the card for the text */
+  }
+  
+  .p-button {
+    margin-top: 10px; /* Adds margin at the top of each button */
+  }
+  

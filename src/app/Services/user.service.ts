@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
-import { Observable, tap } from 'rxjs';
+import { Observable, map, tap } from 'rxjs';
 import { of } from 'rxjs';
 import { User } from '../models/User';
 
@@ -32,4 +32,14 @@ export class UserService {
   leave(id:number):Observable<boolean>{
     return this.http.put<boolean>(`http://10.0.0.15:9097/api/TimeOut/${id}`,{});
   }
+  deleteUser(id: number): Observable<boolean> {
+    return this.http.delete<HttpResponse<any>>(`${this.apiUrl}/${id}`, { observe: 'response' })
+    .pipe(
+      map(response => {
+        console.log(response); // Log to see the actual response
+        return response.status === 200;
+      })
+    );
+  }
+  
 }

@@ -1,28 +1,9 @@
-<div class="profile-container">
-  <ng-container *ngIf="user">
-    <p-card
-      [header]="user.name"
-      [subheader]="user.email"
-      [style]="{ width: '360px' }"
-    >
-      <ng-template pTemplate="header">
-        <img
-          alt="Card"
-          src="https://primefaces.org/cdn/primeng/images/usercard.png"
-        />
-      </ng-template>
-      <p>User Details</p>
-      <ng-template pTemplate="footer">
-        <p-button label="Leave" icon="pi pi-check" styleClass="p-button-primary" (onClick)="leave()"></p-button>
-        <p-button
-          label="Attend"
-          icon="pi pi-times"
-          styleClass="p-button-secondary"
-          [style]="{ 'margin-left': '.5em' }"
-          (onClick)="attendance()"
-        ></p-button>
-      </ng-template>
-    </p-card>
-  </ng-container>
+<div *ngIf="user; else loading" class="side-by-side-container">
+  <app-user-card-profile [user]="user"></app-user-card-profile>
+  <app-user-data-display [user]="user"></app-user-data-display>
+  <!-- Add more user-related components here if needed -->
 </div>
-<p-toast></p-toast>
+
+<ng-template #loading>
+  <p>Loading user profile...</p>
+</ng-template>

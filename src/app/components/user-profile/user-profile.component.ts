@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { MessageService } from 'primeng/api';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { UserService } from 'src/app/Services/user.service';
 import { User } from 'src/app/models/User';
 
@@ -9,80 +8,32 @@ import { User } from 'src/app/models/User';
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.css'],
 })
-export class UserProfileComponent {
+export class UserProfileComponent implements OnInit {
+  user?: User;
 
-  userId: number | null = null;
-  user!: User;
   constructor(
     private route: ActivatedRoute,
-    private userService: UserService,
-    private messageService: MessageService
+    private userService: UserService
   ) {}
 
   ngOnInit() {
-    this.route.paramMap.subscribe((params) => {
-      this.userId = +params.get('id')!; // The '+' operator converts the string to a number
-      // Fetch user data based on this.userId or perform other logic
-    });
-    if (this.userId) {
-      this.getUserById(this.userId);
-    }
-  }
-  leave() {
-    this.userService.leave(this.userId!).subscribe({
-      next: (success) => {
-        if (success) {
-          this.showSuccess('Leaved  successfully.');
-        } else {
-          this.showError('Failed to Leave.');
-        }
-      },
-      error: (error) => {
-        this.showError(`Failed to mark attendance.`);
+    this.route.paramMap.subscribe(params => {
+      const userId = params.get('id');
+      if (userId) {
+        this.getUserById(+userId);
       }
     });
-    }
+  }
+
   getUserById(userId: number) {
-    this.userService.getUserById(userId).subscribe((data) => {
-      console.log(data);
-      this.user = data;
-    });
-  }
-
-  attendance() {
-    this.userService.attend(this.userId!).subscribe({
-      next: (success) => {
-        if (success) {
-          this.showSuccess('Attendance marked successfully.');
-        } else {
-          this.showError('Failed to mark attendance.');
-        }
+    this.userService.getUserById(userId).subscribe({
+      next: (userData) => {
+        this.user = userData;
       },
-      error: (error) => {
-        this.showError(`Failed to mark attendance.`);
+      error: (err) => {
+        console.error('Error fetching user:', err);
+        // Handle error, possibly show a message to the user
       }
-    });
-    
-    
-  }
-
-  showSuccess(message: string) {
-    this.messageService.add({
-      severity: 'success',
-      summary: message,
-      detail: 'The operation has been successfully completed.',
-      life: 2000,
-      
-    });
-  }
-
-  showError(error: string) {
-    this.messageService.add({
-      severity: 'error',
-      summary: error,
-      detail:
-        "The operation couldn't proceed further. Please, try again later or contact support for assistance.",
-      life: 2000,
     });
   }
 }

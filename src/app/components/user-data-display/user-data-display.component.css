@@ -1,0 +1,39 @@
+/* Styles for the User Data Summary section */
+.user-data-summary {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .user-data-summary h2,
+  .user-data-summary h3 {
+    color: #333;
+  }
+  
+  .user-data-summary p {
+    margin: 10px 0;
+    line-height: 1.6;
+    color: #666;
+  }
+  
+  .duration-section {
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .duration-section hr {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+  }
+  
+  /* Adjustments for the last <hr> to avoid double lines */
+  .duration-section div:last-child hr {
+    display: none;
+  }
+  

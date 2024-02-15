@@ -2,3 +2,19 @@
     margin: 4em auto;
     margin-left: 1em; /* Keep it centered and add some margin */
 }
+.side-by-side-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
+    gap: 20px; /* Adds space between the child components */
+    justify-content: center; /* Centers the child components horizontally */
+    align-items: flex-start; /* Aligns items at the top */
+  }
+  
+  /* Optional: Style for individual components for consistent width */
+  app-user-card-profile,
+  app-user-data-display {
+    flex: 1; /* Each child takes equal width */
+    min-width: 300px; /* Minimum width for each child, adjust as needed */
+    max-width: 600px; /* Maximum width for each child, adjust as needed */
+  }
+  
