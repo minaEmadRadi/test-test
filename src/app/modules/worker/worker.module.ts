@@ -12,6 +12,9 @@ import { CardModule } from 'primeng/card';
 import { UserProfileComponent } from 'src/app/components/user-profile/user-profile.component';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
+import { TableModule } from 'primeng/table';
+
+
 
 @NgModule({
   declarations: [
@@ -29,6 +32,7 @@ import { ToastModule } from 'primeng/toast';
     ReactiveFormsModule,
     CardModule,
     ToastModule,
+    TableModule
   ],
   providers: [MessageService],
 })
