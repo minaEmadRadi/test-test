@@ -8,6 +8,7 @@ import { User } from '../models/User';
   providedIn: 'root',
 })
 export class UserService {
+  
   private apiUrl = 'http://10.0.0.15:9097/api/User'; // Adjusted to include '/Account'
 
   constructor(private http: HttpClient) {}
@@ -27,5 +28,8 @@ export class UserService {
 
   attend(id:number):Observable<boolean>{
     return this.http.post<boolean>(`http://10.0.0.15:9097/api/TimeIn/${id}`,{});
+  }
+  leave(id:number):Observable<boolean>{
+    return this.http.put<boolean>(`http://10.0.0.15:9097/api/TimeOut/${id}`,{});
   }
 }

@@ -10,6 +10,7 @@ import { User } from 'src/app/models/User';
   styleUrls: ['./user-profile.component.css'],
 })
 export class UserProfileComponent {
+
   userId: number | null = null;
   user!: User;
   constructor(
@@ -27,7 +28,20 @@ export class UserProfileComponent {
       this.getUserById(this.userId);
     }
   }
-
+  leave() {
+    this.userService.leave(this.userId!).subscribe({
+      next: (success) => {
+        if (success) {
+          this.showSuccess('Leaved  successfully.');
+        } else {
+          this.showError('Failed to Leave.');
+        }
+      },
+      error: (error) => {
+        this.showError(`Failed to mark attendance.`);
+      }
+    });
+    }
   getUserById(userId: number) {
     this.userService.getUserById(userId).subscribe((data) => {
       console.log(data);
